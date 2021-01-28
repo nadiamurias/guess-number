@@ -13,28 +13,27 @@ function getRandomNumber(max) {
 console.log(randomNumber);
 
 function handleGuessNumber() {
-  handleCheckNumber();
-  handleAddAttempts();
+  CheckNumber();
+  AddAttempts();
 }
 
-function handleCheckNumber() {
+function CheckNumber() {
   const inputValue = parseInt(inputElement.value);
-  console.log(inputValue);
-  if (inputValue > 100) {
+  if (isNaN(inputValue)) {
+    // igual que inputValue ==== ""
     trackElement.value = "El número debe estar entre 1 y 100";
-    console.log(trackElement.value);
+  } else if (inputValue < 1 || inputValue > 100) {
+    trackElement.value = "El número debe estar entre 1 y 100";
   } else if (inputValue > randomNumber) {
     trackElement.value = "Demasiado alto";
-    console.log(trackElement.value);
   } else if (inputValue < randomNumber) {
     trackElement.value = "Demasiado bajo";
-    console.log(trackElement.value);
   } else if (inputValue === randomNumber) {
+    // podemos quitar el if ya que es la última condición
     trackElement.value = "Has ganado campeona!!!";
-    console.log(trackElement.value);
   }
 }
-function handleAddAttempts() {
+function AddAttempts() {
   result += 1;
   attemptsElement.value = "Número de intentos: " + result;
 }
