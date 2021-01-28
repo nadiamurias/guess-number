@@ -1,0 +1,35 @@
+.page {
+  margin: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.js-label {
+  margin: 5px 0 5px 0;
+}
+.js-number {
+  width: 200px;
+  height: 30px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  border: transparent;
+  margin-bottom: 10px;
+}
+.js-button {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: lightcoral;
+  color: white;
+  margin-bottom: 10px;
+}
+.box {
+  width: 100%;
+  height: 30px;
+  border: 4px solid lightgrey;
+  margin-bottom: 10px;
+}
