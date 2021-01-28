@@ -12,8 +12,13 @@ function getRandomNumber(max) {
 }
 console.log(randomNumber);
 
+function handleGuessNumber() {
+  handleCheckNumber();
+  handleAddAttempts();
+}
+
 function handleCheckNumber() {
-  const inputValue = inputElement.value;
+  const inputValue = parseInt(inputElement.value);
   console.log(inputValue);
   if (inputValue > 100) {
     trackElement.value = "El número debe estar entre 1 y 100";
@@ -24,7 +29,7 @@ function handleCheckNumber() {
   } else if (inputValue < randomNumber) {
     trackElement.value = "Demasiado bajo";
     console.log(trackElement.value);
-  } else if (inputValue == randomNumber) {
+  } else if (inputValue === randomNumber) {
     trackElement.value = "Has ganado campeona!!!";
     console.log(trackElement.value);
   }
@@ -34,6 +39,4 @@ function handleAddAttempts() {
   attemptsElement.value = "Número de intentos: " + result;
 }
 
-buttonElement.addEventListener("click", handleAddAttempts);
-
-buttonElement.addEventListener("click", handleCheckNumber);
+buttonElement.addEventListener("click", handleGuessNumber);
